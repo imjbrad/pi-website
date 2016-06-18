@@ -1,0 +1,66 @@
+.philosophy {
+
+  //padding-bottom: $vertical-spacing;
+  height: 90vh;
+  position: relative;
+
+  .pi-content-wrapper {
+    padding-top: 0;
+    position: relative;
+
+    .overview {
+      max-width: 620px;
+      width: 70%;
+      box-sizing: content-box;
+      left: -30px;
+      position: relative;
+
+      .overview-photo {
+        position: relative;
+        box-sizing: content-box;
+        width: 100%;
+        height: 300px;
+        border-right: 30px solid white;
+        border-left: 30px solid white;
+        background: $medium-grey;
+        background-image: url("../assets/images/van.png");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .pi-paragraph-wrapper {
+        background: white;
+        padding: 30px;
+        padding-top: $vertical-spacing;
+      }
+
+    }
+
+  }
+
+  .statistics {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    .statisticsSVG {
+      width: 100%;
+      height: 100%;
+    }
+
+      .stat {
+        fill: $peach;
+        stroke-width: .5;
+        stroke: #979797;
+      }
+
+      line {
+        stroke-width: .5;
+        stroke: #979797;
+      }
+
+  }
+
+}

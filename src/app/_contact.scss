@@ -1,0 +1,100 @@
+.contact {
+
+  .pi-section-header {
+
+  }
+
+  .get-pi-wrapper {
+
+    display: flex;
+
+    .get-pi, .form-wrapper {
+      padding: 60px;
+    }
+
+    .get-pi {
+      width: 40%;
+      //border-right: 4px dashed white;
+      background-color: $peach;
+
+      .pi-paragraph-wrapper {
+        color: white;
+        max-width: 280px;
+        margin: auto;
+        width: 100%;
+      }
+
+    }
+
+    .form-wrapper {
+      width: 60%;
+      background-color: $beige;
+
+      form {
+
+        width: 80%;
+        max-width: 560px;
+        margin: auto;
+
+        .field-group {
+          display: flex;
+          border-bottom: 1px solid black;
+          padding: 5px;
+          padding-left: 0;
+          margin-bottom: 15px;
+
+          label {
+            font-size: 10px;
+            margin-right: 5px;
+          }
+
+          input {
+            background: none;
+            border: none;
+            outline: none;
+            flex-grow: 1;
+            padding: 0;
+          }
+
+        }
+
+        .interests {
+          margin-top: 25px;
+          margin-bottom: 25px;
+
+          .interest {
+            display: inline-flex;
+            font-size: 12px;
+            align-items: center;
+
+            &:not(:last-of-type){
+              margin-right: 20px;
+              margin-bottom: 15px;
+            }
+
+            .circle {
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+              border: 1px solid black;
+              margin-right: 8px;
+            }
+
+          }
+        }
+
+        .submit-button {
+          border: 1px solid black;
+          padding: 10px;
+          width: 100%;
+          background: none;
+          outline: none;
+        }
+
+      }
+
+    }
+
+  }
+
+}

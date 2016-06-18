@@ -1,0 +1,36 @@
+.about {
+
+  background-color: #f7f2eb;
+
+  .short-description {
+    text-align: center;
+    line-height: 1.6em;
+    font-size: 1rem;
+  }
+
+  .short-cuts {
+    overflow: auto;
+
+    .short-cut {
+      float: left;
+      min-height: 350px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    }
+
+    .discover-philosophy {
+      width: 40%;
+      //border-right: 1px solid rgba(255, 255, 255, 0);
+      background-image: url("../assets/images/running.jpeg")
+    }
+
+    .explore-product {
+      background-position-y: 20%;
+      background-image: url("../assets/images/working.jpeg");
+      width: 60%;
+    }
+
+  }
+
+}

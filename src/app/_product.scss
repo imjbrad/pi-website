@@ -1,0 +1,44 @@
+.product {
+
+  .explore-pi-daily {
+    background-color: $beige;
+    padding: 30px 0;
+
+    .pi-content-container {
+
+      display: flex;
+      justify-content: space-between;
+
+      .section-header-text {
+      }
+
+      .endorsements {
+
+        .endorsement {
+
+          margin-top: -30%;
+          padding-bottom: 20px;
+          border-bottom: 1px solid black;
+
+          .thumbnail {
+            width: 345px;
+            height: 193px;
+            background: black;
+          }
+
+        }
+      }
+    }
+
+  }
+
+  .demo {
+    background-color: #4d4d4d;
+    min-height: 80vh;
+  }
+
+  .section-footer{
+    height: 20px;
+    background-color: $beige;
+  }
+}

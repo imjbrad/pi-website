@@ -1,0 +1,60 @@
+//http://zellwk.com/blog/responsive-typography/
+@import "fonts";
+
+html {
+
+  font-size: 11px;
+
+  @media (min-width: 800px) {
+    font-size: 13px;
+  }
+
+  @media (min-width: $max-body-width) {
+    font-size: 15px;
+  }
+
+  line-height: 1.35rem;
+
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.2rem; }
+
+h1, h2, h3 {
+  font-family: "apercu_bold", sans-serif;
+}
+
+body {
+  font-size: 1rem;
+  font-family: "apercu", sans-serif;
+}
+
+.pi-paragraph-wrapper {
+
+  h1, h2, h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.6rem;
+
+    & + p {
+      margin-top: .7em;
+      margin-bottom: 0;
+      font-size: .9rem;
+    }
+
+  }
+
+}
+
+.pi-section-header .pi-paragraph-wrapper {
+
+  h1, h2, h3 {
+
+    & + p {
+      font-size: 1rem;
+    }
+
+  }
+
+}
