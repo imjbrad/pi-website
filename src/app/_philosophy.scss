@@ -9,16 +9,15 @@
     position: relative;
 
     .overview {
-      max-width: 620px;
-      width: 70%;
+      //width: 70%;
       box-sizing: content-box;
-      left: -30px;
       position: relative;
 
       .overview-photo {
         position: relative;
         box-sizing: content-box;
-        width: 100%;
+        width: 70%;
+        max-width: 620px;
         height: 300px;
         border-right: 30px solid white;
         border-left: 30px solid white;
@@ -28,10 +27,30 @@
         background-position: center;
       }
 
-      .pi-paragraph-wrapper {
-        background: white;
-        padding: 30px;
-        padding-top: $vertical-spacing;
+      .overview-paragraph-wrapper {
+        display: flex;
+        left: -30px;
+        align-items: flex-start;
+
+        .philosophy-overview {
+          background: white;
+          padding: 30px;
+          padding-right: $vertical-spacing;
+          padding-top: $vertical-spacing;
+          //width:50%;
+
+          h2 {
+            color: $red;
+          }
+        }
+
+        .statistic-description{
+          padding: $vertical-spacing;
+          background-color: $beige;
+          width: 36%;
+          max-width: 324px;
+        }
+
       }
 
     }
@@ -50,16 +69,27 @@
       height: 100%;
     }
 
-      .stat {
-        fill: $peach;
-        stroke-width: .5;
-        stroke: #979797;
+      .stat, line {
+        stroke-width: 3;
+        stroke: $beige;
       }
 
-      line {
-        stroke-width: .5;
-        stroke: #979797;
+      .stat {
+        fill: $peach;
       }
+
+      image {
+        transform: translate(-50%, -50%);
+
+        &.check {
+          transform: translate(-85%, -28%);
+        }
+
+      }
+
+    line {
+      stroke-width: 4;
+    }
 
   }
 

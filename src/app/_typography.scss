@@ -17,12 +17,18 @@ html {
 
 }
 
-h1 { font-size: 2rem; }
+h1 { font-size: 1.6rem; line-height: 1em;}
 h2 { font-size: 1.5rem; }
+h3 { font-size: 1.3rem; }
 h3 { font-size: 1.2rem; }
+h4 { font-size: 1rem; }
 
 h1, h2, h3 {
   font-family: "apercu_bold", sans-serif;
+}
+
+h4 {
+  font-family: "apercu_medium", sans-serif;
 }
 
 body {
@@ -32,15 +38,13 @@ body {
 
 .pi-paragraph-wrapper {
 
-  h1, h2, h3 {
+  h1, h2, h3, h4 {
     margin-top: 0;
-    margin-bottom: 0;
-    line-height: 1.6rem;
+    margin-bottom: .7em;
 
     & + p {
-      margin-top: .7em;
       margin-bottom: 0;
-      font-size: .9rem;
+      font-size: .85rem;
     }
 
   }
@@ -49,10 +53,13 @@ body {
 
 .pi-section-header .pi-paragraph-wrapper {
 
-  h1, h2, h3 {
+  h1 {
+
+    margin-bottom: .5em;
 
     & + p {
       font-size: 1rem;
+      line-height: 1.3em;
     }
 
   }

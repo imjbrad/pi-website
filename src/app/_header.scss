@@ -1,10 +1,11 @@
 $video-wrapper-width: 440px;
-$menu-height: 6vh;
+$video-wrapper-height: 150px;
+$menu-height: 50px;
+$hacky-offset: 16px;
 
 .big-head {
 
   position: relative;
-
   @-webkit-keyframes bump {
     from {
       transform: translateY(0);
@@ -17,11 +18,11 @@ $menu-height: 6vh;
   .animation-wrapper {
     position: relative;
     z-index: 1;
-    animation: bump .3s 1s forwards;
+    animation: bump .3s 2s forwards;
   }
 
   .cover-photo {
-    height: 40vh;
+    height: 423px;
     background-color: grey;
     background-image: url("../assets/images/cover.jpg");
     background-size: cover;
@@ -29,6 +30,10 @@ $menu-height: 6vh;
     background-repeat: no-repeat;
   }
 
+  .title-wrapper {
+    margin-top: -($video-wrapper-height - $hacky-offset);
+    position: relative;
+  }
 
   .video-block, .title-block {
     width: 80%;
@@ -37,15 +42,14 @@ $menu-height: 6vh;
   }
 
   .video-block {
-    height: 18vh;
-    margin-top: -6vh;
     overflow: auto;
+    margin-bottom: 30px;
 
     .video-wrapper{
 
       float: right;
       width: $video-wrapper-width;
-      height: 100%;
+      height: $video-wrapper-height;
       position: relative;
 
       .video {
@@ -78,8 +82,7 @@ $menu-height: 6vh;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-
-    height: 10vh;
+    height: calc(25% - #{$video-wrapper-height + $menu-height});
     position: relative;
     font-weight: bold;
     font-family: "apercu_bold", sans-serif;
