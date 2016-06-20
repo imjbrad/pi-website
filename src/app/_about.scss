@@ -2,35 +2,28 @@
 
   background-color: #f7f2eb;
 
+  .pi-content-wrapper {
+    padding: 80px 0;
+
+    @media (max-width: $largePhone) {
+      padding: 30px 0;
+    }
+
+  }
+
   .short-description {
     text-align: center;
     line-height: 1.6em;
     font-size: 1rem;
-  }
 
-  .short-cuts {
-    overflow: auto;
-
-    .short-cut {
-      float: left;
-      min-height: 350px;
-      background-repeat: no-repeat;
-      background-size: cover;
-      position: relative;
-    }
-
-    .discover-philosophy {
-      width: 40%;
-      //border-right: 1px solid rgba(255, 255, 255, 0);
-      background-image: url("../assets/images/running.jpeg")
-    }
-
-    .explore-product {
-      background-position-y: 20%;
-      background-image: url("../assets/images/working.jpeg");
-      width: 60%;
+    @media (max-width: $largePhone) {
+      line-height: 1.6em;
+      font-size: .9rem;
+      text-align: center;
     }
 
   }
 
 }
+
+@import "about_medium";

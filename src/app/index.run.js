@@ -23,7 +23,7 @@ export function runBlock ($timeout, $rootScope) {
 
   });
 
-  var menuBlock = $(".short-cuts");
+  var menuBlock = $(".philosophy");
   $rootScope.scrollingNearTop = true;
 
   new Waypoint({
@@ -33,9 +33,7 @@ export function runBlock ($timeout, $rootScope) {
       $rootScope.$apply();
       console.log("passed");
     }
-    //offset: function() {
-    //  return -this.element.clientHeight
-    //}
   })
+
 
 }

@@ -5,8 +5,12 @@ html {
 
   font-size: 11px;
 
-  @media (min-width: 800px) {
-    font-size: 13px;
+  @media (min-width: $mediumPhone) {
+    font-size: 12px;
+  }
+
+  @media (min-width: $smallDesktop) {
+    font-size: 14px;
   }
 
   @media (min-width: $max-body-width) {
@@ -22,6 +26,11 @@ h2 { font-size: 1.5rem; }
 h3 { font-size: 1.3rem; }
 h3 { font-size: 1.2rem; }
 h4 { font-size: 1rem; }
+
+h1, h2, h3, h4 {
+  font-weight: normal;
+  line-height: 1em;
+}
 
 h1, h2, h3 {
   font-family: "apercu_bold", sans-serif;
@@ -45,6 +54,7 @@ body {
     & + p {
       margin-bottom: 0;
       font-size: .85rem;
+      line-height: 1.7em;
     }
 
   }

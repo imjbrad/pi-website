@@ -1,43 +1,126 @@
+$photo-height: 300px;
+$mini-photo-height: 200px;
+
 .philosophy {
 
-  //padding-bottom: $vertical-spacing;
-  height: 90vh;
   position: relative;
 
   .pi-content-wrapper {
     padding-top: 0;
-    position: relative;
+    padding-bottom: 1.5*$vertical-spacing;
 
-    .overview {
-      //width: 70%;
-      box-sizing: content-box;
+    @media (max-width: $largePhone) {
+      padding-bottom: 0;
+    }
+
+    .above-stats-wrapper {
       position: relative;
+      z-index: 2;
+    }
 
-      .overview-photo {
+    .photos {
+      overflow: auto;
+
+      .photo {
+        float: left;
+        height: $photo-height;
+        background-repeat: no-repeat;
+        background-size: cover;
         position: relative;
+
+        .pi-overlay .label br {
+          display: none;
+        }
+
+        @media (max-width: $largePhone) {
+          height: $mini-photo-height;
+          background-position: center;
+
+          .pi-overlay {
+
+            .label {
+              bottom: 10px;
+              left: 10px;
+              right: 0;
+              line-height: 1.15em;
+
+              br {
+                display: inline;
+              }
+
+            }
+          }
+        }
+
+      }
+
+      .run {
+        width: 45%;
+        background-image: url("../assets/images/running.jpeg");
+        @media (max-width: $largePhone) {
+          width: 50%;
+        }
+      }
+
+      .work {
+        background-position-y: 20%;
+        background-image: url("../assets/images/working.jpeg");
+        width: 55%;
+        @media (max-width: $largePhone) {
+          width: 50%;
+        }
+      }
+
+      .van {
+        left: 10%;
+        width: 50%;
         box-sizing: content-box;
-        width: 70%;
-        max-width: 620px;
-        height: 300px;
         border-right: 30px solid white;
         border-left: 30px solid white;
-        background: $medium-grey;
         background-image: url("../assets/images/van.png");
-        background-size: cover;
-        background-position: center;
+        @media (max-width: $largePhone) {
+          left: 7.5%;
+          border: none;
+          background-position: right center;
+          width: 70%;
+        }
       }
+
+    }
+
+    .overview {
+      box-sizing: content-box;
 
       .overview-paragraph-wrapper {
         display: flex;
         left: -30px;
         align-items: flex-start;
 
+        @media (max-width: $largePhone) {
+          padding-top: 0px;
+          flex-direction: column;
+          display: block;
+          margin-top: 30px;
+        }
+
         .philosophy-overview {
           background: white;
           padding: 30px;
           padding-right: $vertical-spacing;
           padding-top: $vertical-spacing;
-          //width:50%;
+          width: 50%;
+          max-width: 450px;
+
+          @media (max-width: $smallDesktop) {
+            width: 75%;
+            br {  display: none; }
+          }
+
+          @media (max-width: $largePhone) {
+            width: 100%;
+            padding: 0px !important;
+          }
+
 
           h2 {
             color: $red;
@@ -47,8 +130,12 @@
         .statistic-description{
           padding: $vertical-spacing;
           background-color: $beige;
-          width: 36%;
-          max-width: 324px;
+          width: 324px;
+
+          @media (max-width: $largePhone) {
+            display:none;
+          }
+
         }
 
       }
@@ -59,10 +146,15 @@
 
   .statistics {
     position: absolute;
-    top: 0;
+    top: $photo-height;
     right: 0;
     bottom: 0;
     left: 0;
+    z-index: 0;
+
+    .statistic-description {
+      display: none;
+    }
 
     .statisticsSVG {
       width: 100%;
@@ -91,6 +183,58 @@
       stroke-width: 4;
     }
 
+    @media (min-width: $max-body-width) {
+      .statisticsSVG {
+        overflow: visible;
+      }
+      image.check {
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    @media (max-width: $largePhone) {
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+      position: relative;
+      height:280px;
+      z-index: 3;
+      margin-top: 0px;
+
+      .statisticsSVG {
+
+        display: none;
+
+        &.small {
+          display: block !important;
+        }
+
+      }
+
+      .statistic-description {
+        display: block;
+        position: absolute;
+        top: 35%;
+        left: 40%;
+        padding: 0px;
+        background-color: white;
+        width: 40%;
+
+        h2 {
+          margin-bottom: 0em;
+        }
+
+        p {
+          line-height: 1.3em;
+        }
+      }
+
+    }
+
   }
 
+
 }
+
+@import "philosophy_medium";

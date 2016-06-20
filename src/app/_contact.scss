@@ -8,14 +8,24 @@
 
     display: flex;
 
+    @media (max-width: $largePhone) {
+      flex-direction: column;
+    }
+
     .get-pi, .form-wrapper {
       padding: 60px;
+      @media (max-width: $largePhone) {
+        padding: 30px;
+      }
     }
 
     .get-pi {
       width: 40%;
-      //border-right: 4px dashed white;
       background-color: $peach;
+
+      @media (max-width: $largePhone) {
+        width: 100%;
+      }
 
       .pi-paragraph-wrapper {
         color: white;
@@ -30,11 +40,19 @@
       width: 60%;
       background-color: $beige;
 
+      @media (max-width: $largePhone) {
+        width: 100%;
+      }
+
       form {
 
         width: 80%;
         max-width: 560px;
         margin: auto;
+
+        @media (max-width: $largePhone) {
+          width: 100%;
+        }
 
         .field-group {
           display: flex;

@@ -13,9 +13,17 @@
       justify-content: space-between;
       align-items: flex-end;
 
+      @media (max-width: $largePhone) {
+        flex-direction: column;
+        align-items: center;
+      }
+
       .founder {
 
         width: 35%;
+        @media (max-width: $largePhone) {
+          width: 100%;
+        }
 
         .jordan-image {
 
@@ -37,10 +45,17 @@
 
         width: calc(65% - 50px);
 
+        @media (max-width: $largePhone) {
+          width: 100%;
+        }
+
         .adviser {
-          width: calc(50% - 15px);
+          width: 50%;
           float: left;
-          margin-right: 15px;
+
+          &:not(:last-of-type){
+            margin-right: 15px;
+          }
 
           .adviser-image {
             width: 100%;
@@ -50,6 +65,10 @@
           }
 
           .adviser-bio {
+
+            h4 {
+              margin-bottom: 0em;
+            }
 
             p {
               line-height: 1.4em;

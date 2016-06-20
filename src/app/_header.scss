@@ -1,7 +1,9 @@
 $video-wrapper-width: 440px;
 $video-wrapper-height: 150px;
-$menu-height: 50px;
-$hacky-offset: 16px;
+$video-width: 270px;
+$video-height: $video-width / (16/9);
+$menu-height: 65px;
+$hacky-offset: 32px;
 
 .big-head {
 
@@ -19,10 +21,12 @@ $hacky-offset: 16px;
     position: relative;
     z-index: 1;
     animation: bump .3s 2s forwards;
+    background-color: white;
+    overflow: hidden;
   }
 
   .cover-photo {
-    height: 423px;
+    height: 322px;
     background-color: grey;
     background-image: url("../assets/images/cover.jpg");
     background-size: cover;
@@ -31,78 +35,100 @@ $hacky-offset: 16px;
   }
 
   .title-wrapper {
+    margin: auto;
     margin-top: -($video-wrapper-height - $hacky-offset);
     position: relative;
-  }
-
-  .video-block, .title-block {
     width: 80%;
     max-width: 900px;
-    margin: auto;
-  }
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 36px;
 
-  .video-block {
-    overflow: auto;
-    margin-bottom: 30px;
+    @media (max-width: $lt-tablet) {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 25px;
+      padding-bottom: 25px;
+      width: 85%;
+    }
 
-    .video-wrapper{
 
-      float: right;
-      width: $video-wrapper-width;
-      height: $video-wrapper-height;
-      position: relative;
-
-      .video {
-        float: left;
-        width: 216px;
-        height: 100%;
-        background-color: black;
+    .logo-side {
+      .logo {
+        height: 46px;
+        width: auto;
       }
 
-      .caption {
-        height: 100%;
-        width: calc(100% - 216px);
-        float: left;
-        position: relative;
-        font-size: 10px;
+      @media (max-width: $lt-tablet) {
+        margin-bottom: 12px;
+      }
 
-        span {
+    }
+
+    .tagline-side {
+
+      //border: 1px solid red;
+
+      & > * {
+        //border: 1px solid red;
+      }
+
+      @media (max-width: $lt-tablet) {
+        width: 184px;
+      }
+
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .video-wrapper {
+        border-bottom: 1px solid $dark;
+        padding-bottom: 25px;
+        margin-bottom: 36px;
+
+        .video {
+          width: $video-width;
+          height: $video-height;
+          background-image: url("../assets/images/pitch-still.jpg");
+          background-size: cover;
+          border: 2px solid white;
+          border-bottom: none;
+        }
+
+        @media (max-width: $lt-tablet) {
+          padding-bottom: 10px;
+          margin-bottom: 10px;
           position: absolute;
-          bottom: 0;
-          left: 15px;
+          right: -100px;
+          top: 0;
+
+          .video {
+            width: 150px;
+            height: 150px / (16/9);
+          }
+
         }
 
       }
 
+      .tagline {
+        font-size: 1.25em;
+        line-height: 1.3em;
+        font-family: "apercu_medium", sans-serif;
+
+        @media (max-width: $lt-tablet) {
+          font-size: .9em;
+          line-height: 1.1em;
+
+          br {
+            display: none;
+          }
+        }
+
+      }
     }
 
-  }
-
-  .title-block {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    height: calc(25% - #{$video-wrapper-height + $menu-height});
-    position: relative;
-    font-weight: bold;
-    font-family: "apercu_bold", sans-serif;
-
-    .logo {
-      height: 55px;
-      width: auto;
-    }
-
-    .tagline-side {
-      width: $video-wrapper-width;
-      font-size: 1.3em;
-    }
-
-  }
-
-  .fake-menu-block {
-    background-color: white;
-    height: $menu-height;
-    width: 100%;
   }
 
   .menu-block {
@@ -119,6 +145,7 @@ $hacky-offset: 16px;
       width: 1px;
       height: 300px;
       border-left: 1px solid white;
+
     }
 
     nav {
@@ -189,13 +216,22 @@ $hacky-offset: 16px;
           transform: rotate(-42deg);
         }
 
+        @media (max-width: $lt-tablet) {
+          width: 3px;
+          height: 3px;
+          border-radius: 50%;
+          background-color: white;
+          transform: rotate(0deg) !important;
+        }
+
       }
 
       a {
+
         text-align: center;
         color: white;
-        font-weight: bold;
         position: relative;
+
       }
 
     }
@@ -213,7 +249,7 @@ $hacky-offset: 16px;
     transform: translateX(-50%);
     width: 100%;
     max-width: $max-body-width;
-    z-index: 1;
+    z-index: 100;
     margin: auto;
     bottom: auto;
 
@@ -229,3 +265,5 @@ $hacky-offset: 16px;
   }
 
 }
+
+@import "header_small";
