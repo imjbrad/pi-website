@@ -28,7 +28,7 @@ $hacky-offset: 32px;
   .cover-photo {
     height: 322px;
     background-color: grey;
-    background-image: url("../assets/images/cover.jpg");
+    background-image: url("../../assets/images/cover.jpg");
     background-size: cover;
     background-position: -2% center;
     background-repeat: no-repeat;
@@ -90,7 +90,7 @@ $hacky-offset: 32px;
         .video {
           width: $video-width;
           height: $video-height;
-          background-image: url("../assets/images/pitch-still.jpg");
+          background-image: url("../../assets/images/pitch-still.jpg");
           background-size: cover;
           border: 2px solid white;
           border-bottom: none;
@@ -118,8 +118,8 @@ $hacky-offset: 32px;
         font-family: "apercu_medium", sans-serif;
 
         @media (max-width: $lt-tablet) {
-          font-size: .9em;
-          line-height: 1.1em;
+          font-size: 1em;
+          line-height: 1.13em;
 
           br {
             display: none;
@@ -140,18 +140,22 @@ $hacky-offset: 32px;
     width: 100%;
     overflow: hidden;
 
-    .separator{
-      display: block;
-      width: 1px;
-      height: 300px;
-      border-left: 1px solid white;
-
-    }
-
     nav {
       @extend .pi-content-container;
       color: white;
       height: 100%;
+
+      .separator{
+        display: block;
+        width: 1px;
+        height: 300px;
+        border-left: .5px solid $beige;
+      }
+
+      a {
+        cursor: pointer;
+      }
+
     }
 
     nav.compressed.showing {
@@ -162,13 +166,11 @@ $hacky-offset: 32px;
 
 
       .logo-side {
-        width: 22%;
         display: flex;
-        justify-content: space-between;
         align-items: center;
 
-        .separator {
-          transform: rotate(42deg);
+        .logo, .separator {
+          margin-right: 30px;
         }
 
         .logo {
@@ -176,22 +178,71 @@ $hacky-offset: 32px;
           font-size: 36px;
         }
 
+        .separator {
+          transform: rotate(36deg);
+
+          @media (max-width: $largePhone) {
+            transform: rotate(30deg);
+            margin-right: 20px;
+          }
+
+        }
+
+        .current-section-mobile {
+          display: none;
+
+          @media (max-width: $largePhone) {
+            display: inline;
+          }
+
+          select {
+            @extend h3;
+            vertical-align: middle;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            text-align: left;
+            color: white;
+            -webkit-appearance: none;
+          }
+
+          .caret {
+            font-size: .7em;
+            margin-right: 4px;
+          }
+
+        }
+
         .current-section{
           color: white;
-          font-weight: 800;
+
+          @media (max-width: $largePhone) {
+            display: none;
+          }
+
         }
 
       }
 
       .nav-side {
         display: flex;
-        width: 35%;
-        justify-content: space-between;
+        align-items: center;
 
-        a {
-          font-size: 15px;
-          font-weight: 500;
+        @media (max-width: $largePhone) {
+          display: none;
         }
+
+        .separator {
+          width: 6px;
+          height: 6px;
+          background-color: white;
+          border-radius: 100%;
+        }
+
+        a:not(:last-of-type), .separator {
+          margin-right: 20px;
+        }
+
       }
 
     }

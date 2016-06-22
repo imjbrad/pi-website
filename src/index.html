@@ -1,10 +1,10 @@
 <!doctype html>
-<html ng-app="websiteV2" ng-strict-di>
+<html ng-app="websiteV2" root-scroll ng-strict-di>
   <head>
     <meta charset="utf-8">
     <title>PiXYZ: Health conscious productivity for students</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
@@ -25,11 +25,9 @@
     <div class="animation-wrapper">
       <div class="cover-photo"></div>
       <div class="title-wrapper">
-
         <div class="logo-side">
           <img class="logo" src="assets/logo.png">
         </div>
-
         <div class="tagline-side">
           <div class="video-wrapper">
             <div class="video"></div>
@@ -39,30 +37,36 @@
               productivity solutions for tomorrow’s leaders.
           </div>
         </div>
-
       </div>
     </div>
-    <div class="menu-block">
+    <div class="menu-block" ng-controller="MenuController">
       <nav class="full">
-        <h3><a>Philosophy</a></h3>
+        <a ui-sref="philosophy"><h4>Philosophy</h4></a>
         <div class="separator"></div>
-        <h3><a>Product</a></h3>
+        <a ui-sref="product"><h4>Product</h4></a>
         <div class="separator"></div>
-        <h3><a>Company</a></h3>
+        <a ui-sref="company"><h4>Company</h4></a>
         <div class="separator"></div>
-        <h3><a>Contact</a></h3>
+        <a ui-sref="contact"><h4>Contact</h4></a>
       </nav>
       <nav class="compressed">
         <div class="logo-side">
           <div class="logo">Pi</div>
           <div class="separator"></div>
-          <div class="current-section">Philosophy</div>
+          <h3 class="current-section">{{ selected_state.data.sectionDisplayName }}</h3>
+          <div class="current-section-mobile">
+            <span class="caret">&#9660;</span>
+            <select ng-model="selected_state" ng-change="stateNameSelected()" ng-options="state.data.sectionDisplayName for state in section_states"></select>
+          </div>
         </div>
         <div class="nav-side">
-          <h3><a>Philosophy</a></h3>
-          <h3><a>Product</a></h3>
-          <h3><a>Company</a></h3>
-          <h3><a>Contact</a></h3>
+          <a ui-sref="philosophy" ui-sref-active="active"><h4>Philosophy</h4></a>
+          <div class="separator"></div>
+          <a ui-sref="product" ui-sref-active="active"><h4>Product</h4></a>
+          <div class="separator"></div>
+          <a ui-sref="company" ui-sref-active="active"><h4>Company</h4></a>
+          <div class="separator"></div>
+          <a ui-sref="contact" ui-sref-active="active"><h4>Contact</h4></a>
         </div>
       </nav>
     </div>
@@ -78,8 +82,8 @@
     </div>
   </section>
 
-  <section class="philosophy">
-    <div class="pi-content-wrapper">
+  <section class="philosophy" scroll-sref="philosophy">
+    <div class="pi-content-wrapper" ng-controller="PhilosophyCtrl">
       <div class="above-stats-wrapper">
         <div class="photos">
           <div class="run photo">
@@ -114,11 +118,8 @@
                 </p>
               </div>
               <div class="statistic-description pi-paragraph-wrapper">
-                <h2>73% of students</h2>
-                <p>
-                  72% perfect of college studets do something that is about
-                   this much longer than what  it actually is.
-                </p>
+                <h2>{{ currentStat.title }}</h2>
+                <p>{{ currentStat.details }}</p>
               </div>
             </div>
           </div>
@@ -126,22 +127,25 @@
       </div>
       <div class="statistics">
         <div class="statistic-description pi-paragraph-wrapper">
-          <h2>73% of students</h2>
-          <p>
-            72% perfect of college studets do something that is about
-             this much longer than what  it actually is.
-          </p>
+          <h2>{{ currentStat.title }}</h2>
+          <p>{{ currentStat.details }}</p>
         </div>
         <svg class="statisticsSVG">
           <line x1="0" y1="60%" x2="100%" y2="20%" />
           <line x1="100%" y1="20%" x2="70%" y2="100%" />
           <line x1="70%" y1="100%" x2="0" y2="60%" />
-          <circle class="stat" r="70" cx="0" cy="60%"/>
-          <circle class="stat" r="70" cx="100%" cy="20%"/>
-          <circle class="stat" r="70" cx="70%" cy="100%"/>
-          <image class="smile" xlink:href="assets/smile.png" x="0" y="60%" height="50px" width="50px"/>
-          <image class="check" xlink:href="assets/check.png" x="100%" y="20%" height="50px" width="50px"/>
-          <image class="heart" xlink:href="assets/heart.png" x="70%" y="100%" height="50px" width="50px"/>
+          <g ng-click="selectStat($event, 0)">
+            <circle class="stat" r="70"  cx="0" cy="60%"/>
+            <image class="smile"xlink:href="assets/smile.png" x="0" y="60%" height="50px" width="50px"/>
+          </g>
+          <g class="check-group" ng-click="selectStat($event, 1)">
+            <circle class="stat" r="70" cx="100%" cy="20%"/>
+            <image class="check" xlink:href="assets/check.png" x="100%" y="20%" height="50px" width="50px"/>
+          </g>
+          <g ng-click="selectStat($event, 2)">
+            <circle class="stat" r="70" cx="70%" cy="100%"/>
+            <image class="heart" xlink:href="assets/heart.png" x="70%" y="100%" height="50px" width="50px"/>
+          </g>
         </svg>
         <svg class="statisticsSVG small" style="display: none;">
           <line x1="0" y1="30%" x2="100%" y2="20%" />
@@ -158,7 +162,7 @@
     </div>
   </section>
 
-  <section class="product">
+  <section class="product" scroll-sref="product">
     <div class="explore-pi-daily pi-section-header">
       <div class="pi-section-header-text pi-paragraph-wrapper">
         <h1>Explore PiDaily</h1>
@@ -172,7 +176,7 @@
     <div class="section-footer"></div>
   </section>
 
-  <section class="company">
+  <section class="company" scroll-sref="company">
     <div class="pi-section-header">
         <div class="pi-section-header-text text-centered pi-paragraph-wrapper">
           <h1>About the Company</h1>
@@ -221,7 +225,7 @@
     </div>
   </section>
 
-  <section class="contact">
+  <section class="contact" scroll-sref="contact">
     <div class="pi-section-header">
       <div class="pi-section-header-text text-centered pi-paragraph-wrapper">
         <h1>Contact Us</h1>

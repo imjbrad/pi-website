@@ -49,12 +49,14 @@
           width: 100%;
         }
 
+        $gutter: 20px;
+
         .adviser {
-          width: 50%;
+          width: calc(50% - #{$gutter/2});
           float: left;
 
           &:not(:last-of-type){
-            margin-right: 15px;
+            margin-right: $gutter;
           }
 
           .adviser-image {

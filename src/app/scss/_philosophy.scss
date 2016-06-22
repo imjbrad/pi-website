@@ -14,8 +14,7 @@ $mini-photo-height: 200px;
     }
 
     .above-stats-wrapper {
-      position: relative;
-      z-index: 2;
+
     }
 
     .photos {
@@ -56,7 +55,7 @@ $mini-photo-height: 200px;
 
       .run {
         width: 45%;
-        background-image: url("../assets/images/running.jpeg");
+        background-image: url("../../assets/images/running.jpeg");
         @media (max-width: $largePhone) {
           width: 50%;
         }
@@ -64,7 +63,7 @@ $mini-photo-height: 200px;
 
       .work {
         background-position-y: 20%;
-        background-image: url("../assets/images/working.jpeg");
+        background-image: url("../../assets/images/working.jpeg");
         width: 55%;
         @media (max-width: $largePhone) {
           width: 50%;
@@ -72,12 +71,14 @@ $mini-photo-height: 200px;
       }
 
       .van {
+        position: relative;
+        z-index: 2;
         left: 10%;
         width: 50%;
         box-sizing: content-box;
         border-right: 30px solid white;
         border-left: 30px solid white;
-        background-image: url("../assets/images/van.png");
+        background-image: url("../../assets/images/van.png");
         @media (max-width: $largePhone) {
           left: 7.5%;
           border: none;
@@ -95,6 +96,13 @@ $mini-photo-height: 200px;
         display: flex;
         left: -30px;
         align-items: flex-start;
+        position: relative;
+        z-index: 2;
+
+        @media (max-width: $smallDesktop) {
+          left: 0px;
+          position: relative;
+        }
 
         @media (max-width: $largePhone) {
           padding-top: 0px;
@@ -106,7 +114,7 @@ $mini-photo-height: 200px;
         .philosophy-overview {
           background: white;
           padding: 30px;
-          padding-right: $vertical-spacing;
+          //padding-right: $vertical-spacing;
           padding-top: $vertical-spacing;
           width: 50%;
           max-width: 450px;
@@ -161,6 +169,9 @@ $mini-photo-height: 200px;
       height: 100%;
     }
 
+      .check-group circle {
+      }
+
       .stat, line {
         stroke-width: 3;
         stroke: $beige;
@@ -185,7 +196,7 @@ $mini-photo-height: 200px;
 
     @media (min-width: $max-body-width) {
       .statisticsSVG {
-        overflow: visible;
+        //overflow: visible;
       }
       image.check {
         transform: translate(-50%, -50%);
