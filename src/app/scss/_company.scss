@@ -13,7 +13,7 @@
       justify-content: space-between;
       align-items: flex-end;
 
-      @media (max-width: $largePhone) {
+      @media (max-width: $lte-largePhone) {
         flex-direction: column;
         align-items: center;
       }
@@ -21,7 +21,7 @@
       .founder {
 
         width: 35%;
-        @media (max-width: $largePhone) {
+        @media (max-width: $lte-largePhone) {
           width: 100%;
         }
 
@@ -45,7 +45,7 @@
 
         width: calc(65% - 50px);
 
-        @media (max-width: $largePhone) {
+        @media (max-width: $lte-largePhone) {
           width: 100%;
         }
 

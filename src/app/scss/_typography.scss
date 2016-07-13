@@ -5,11 +5,11 @@ html {
 
   font-size: 11px;
 
-  @media (min-width: $mediumPhone) {
+  @media (min-width: $lte-mediumPhone) {
     font-size: 12px;
   }
 
-  @media (min-width: $smallDesktop) {
+  @media (min-width: $lte-smallDesktop) {
     font-size: 14px;
   }
 

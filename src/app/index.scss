@@ -10,17 +10,17 @@ $peach: #fcbb78;
 $max-body-width: 1280px;
 $red: #f1646f;
 
-$smallPhone: 320px;
-$mediumPhone: 375px;
-$largePhone: 414px;
+$lte-smallPhone: 320px;
+$lte-mediumPhone: 375px;
+$lte-largePhone: 414px;
 
-$tablet: 768px;
-$lt-tablet: $tablet - 1;
+$lte-tablet: 768px;
+$lt-tablet: $lte-tablet - 1;
 
-$smallDesktop: 800px;
-$lt-smallDesktop: $smallDesktop - 1;
+$lte-smallDesktop: 800px;
+$lt-smallDesktop: $lte-smallDesktop - 1;
 
-$bigDesktop: 1366px;
+$lte-bigDesktop: 1366px;
 
 
 * {
@@ -64,7 +64,7 @@ body {
   max-width: 900px;
   margin: auto;
 
-  @media (max-width: $smallDesktop - 1) {
+  @media (max-width: $lte-smallDesktop - 1) {
     width: 85%;
   }
 
@@ -91,7 +91,7 @@ body {
 
 .hide-on-mobile {
 
-  @media (max-width: $smallDesktop - 1) {
+  @media (max-width: $lte-smallDesktop - 1) {
     display: none;
   }
 

@@ -1,5 +1,6 @@
-$photo-height: 300px;
+$photo-height: 350px;
 $mini-photo-height: 200px;
+$statistic-height: 258px;
 
 .philosophy {
 
@@ -9,7 +10,7 @@ $mini-photo-height: 200px;
     padding-top: 0;
     padding-bottom: 1.5*$vertical-spacing;
 
-    @media (max-width: $largePhone) {
+    @media (max-width: $lt-tablet) {
       padding-bottom: 0;
     }
 
@@ -31,7 +32,7 @@ $mini-photo-height: 200px;
           display: none;
         }
 
-        @media (max-width: $largePhone) {
+        @media (max-width: $lte-largePhone) {
           height: $mini-photo-height;
           background-position: center;
 
@@ -56,7 +57,12 @@ $mini-photo-height: 200px;
       .run {
         width: 45%;
         background-image: url("../../assets/images/running.jpeg");
-        @media (max-width: $largePhone) {
+
+        @media (max-width: $lte-tablet) {
+          background-position-y: 20%;
+        }
+
+        @media (max-width: $lte-largePhone) {
           width: 50%;
         }
       }
@@ -65,85 +71,206 @@ $mini-photo-height: 200px;
         background-position-y: 20%;
         background-image: url("../../assets/images/working.jpeg");
         width: 55%;
-        @media (max-width: $largePhone) {
+        @media (max-width: $lte-largePhone) {
           width: 50%;
         }
       }
 
       .van {
         position: relative;
-        z-index: 2;
+        z-index: 1;
         left: 10%;
         width: 50%;
         box-sizing: content-box;
-        border-right: 30px solid white;
-        border-left: 30px solid white;
         background-image: url("../../assets/images/van.png");
-        @media (max-width: $largePhone) {
+
+        @media (max-width: $lt-tablet) {
           left: 7.5%;
           border: none;
           background-position: right center;
-          width: 70%;
+          width: 85%;
         }
+
       }
 
     }
 
     .overview {
       box-sizing: content-box;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
 
-      .overview-paragraph-wrapper {
-        display: flex;
-        left: -30px;
-        align-items: flex-start;
-        position: relative;
-        z-index: 2;
+      @media (max-width: $lt-tablet) {
+        flex-direction: column;
+        display: block;
+      }
 
-        @media (max-width: $smallDesktop) {
-          left: 0px;
-          position: relative;
+      .overview-paragraph-wrapper, .statistics-wrapper {
+        width: 50%;
+
+        @media (max-width: $lt-tablet) {
+          width: 100%;
         }
 
-        @media (max-width: $largePhone) {
-          padding-top: 0px;
-          flex-direction: column;
-          display: block;
-          margin-top: 30px;
+      }
+
+      .overview-paragraph-wrapper {
+
+        padding-top: $vertical-spacing;
+
+        @media (max-width: $lte-smallDesktop) {
+          br {
+            display: none;
+          }
+        }
+
+        @media (max-width: $lt-tablet) {
+          padding-top: $vertical-spacing/2;
         }
 
         .philosophy-overview {
-          background: white;
-          padding: 30px;
-          //padding-right: $vertical-spacing;
-          padding-top: $vertical-spacing;
-          width: 50%;
-          max-width: 450px;
+          max-width: 350px;
 
-          @media (max-width: $smallDesktop) {
-            width: 75%;
-            br {  display: none; }
-          }
-
-          @media (max-width: $largePhone) {
+          @media (max-width: $lt-tablet) {
+            max-width: initial;
             width: 100%;
-            padding: 0px !important;
+            padding: 0 !important;
           }
-
 
           h2 {
             color: $red;
           }
         }
+      }
 
-        .statistic-description{
-          padding: $vertical-spacing;
+      .statistics-wrapper {
+
+        margin-top: -$statistic-height;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        @media (max-width: $lt-tablet) {
+          margin-top: auto;
+          align-items: flex-start;
+        }
+
+        .statistic {
           background-color: $beige;
-          width: 324px;
+          width: 100%;
+          box-sizing: border-box;
+          position: relative;
+          padding: 60px;
+          padding-left: 40%;
+          margin-bottom: $vertical-spacing;
 
-          @media (max-width: $largePhone) {
-            display:none;
+          @media (max-width: $lt-tablet) {
+            width: 100%;
+            margin-bottom: $vertical-spacing/2;
+            margin-top: $vertical-spacing/2;
+            padding: 50px !important;
+            height: auto;
           }
 
+
+        }
+
+        .icons {
+          display: flex;
+          align-items: flex-end;
+          justify-content: flex-end;
+          width: 100%;
+
+          @media (max-width: $lt-tablet) {
+            width: 100%;
+            justify-content: center;
+            align-items: flex-start;
+            align-content: space-around;
+            margin-bottom: $vertical-spacing/2;
+          }
+
+          .icon {
+            width: 26%;
+            max-width: 110px;
+            background: $peach;
+            border: 3px solid $beige;
+            border-radius: 100%;
+            margin-right: 3%;
+            cursor: pointer;
+            position: relative;
+            //box-shadow: 0px 0px 19px 0px rgba(185, 185, 185, 0.50);
+
+
+            background-size: 45%;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            transition: .2s all;
+
+            &.active-stat {
+
+              &:before {
+                content: "";
+                display: block;
+                width: 25px;
+                height: 25px;
+                transform: rotate(45deg);
+                background-color: $beige;
+                position: absolute;
+                top: -$vertical-spacing - 3px - 15px;
+                left: calc(50% - 10px);
+
+                @media (max-width: $lte-tablet) {
+                  width: 20px;
+                  height: 20px;
+                  top: -($vertical-spacing/2) - 3px - 10px;
+                }
+
+              }
+
+            }
+
+            &:active, &:focus {
+              outline: none;
+            }
+
+            &:not(.active-stat) {
+
+              &:hover {
+                transform: scale(1.08);
+              }
+
+              opacity: .3;
+
+              &:hover {
+                opacity: .5;
+              }
+
+            }
+
+            &:active {
+              transform: scale(1);
+            }
+
+            &:last-of-type {
+              margin-right: 0px;
+            }
+
+            &.smile {
+              background-image: url("../assets/smile.png");
+            }
+
+            &.heart {
+              background-image: url("../assets/heart.png");
+            }
+
+            &.check {
+              background-image: url("../assets/check.png");
+            }
+
+
+          }
         }
 
       }
@@ -151,101 +278,5 @@ $mini-photo-height: 200px;
     }
 
   }
-
-  .statistics {
-    position: absolute;
-    top: $photo-height;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
-
-    .statistic-description {
-      display: none;
-    }
-
-    .statisticsSVG {
-      width: 100%;
-      height: 100%;
-    }
-
-      .check-group circle {
-      }
-
-      .stat, line {
-        stroke-width: 3;
-        stroke: $beige;
-      }
-
-      .stat {
-        fill: $peach;
-      }
-
-      image {
-        transform: translate(-50%, -50%);
-
-        &.check {
-          transform: translate(-85%, -28%);
-        }
-
-      }
-
-    line {
-      stroke-width: 4;
-    }
-
-    @media (min-width: $max-body-width) {
-      .statisticsSVG {
-        //overflow: visible;
-      }
-      image.check {
-        transform: translate(-50%, -50%);
-      }
-    }
-
-    @media (max-width: $largePhone) {
-      top: auto;
-      right: auto;
-      bottom: auto;
-      left: auto;
-      position: relative;
-      height:280px;
-      z-index: 3;
-      margin-top: 0px;
-
-      .statisticsSVG {
-
-        display: none;
-
-        &.small {
-          display: block !important;
-        }
-
-      }
-
-      .statistic-description {
-        display: block;
-        position: absolute;
-        top: 35%;
-        left: 40%;
-        padding: 0px;
-        background-color: white;
-        width: 40%;
-
-        h2 {
-          margin-bottom: 0em;
-        }
-
-        p {
-          line-height: 1.3em;
-        }
-      }
-
-    }
-
-  }
-
 
 }
-
-@import "philosophy_medium";

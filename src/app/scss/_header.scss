@@ -8,6 +8,7 @@ $hacky-offset: 32px;
 .big-head {
 
   position: relative;
+
   @-webkit-keyframes bump {
     from {
       transform: translateY(0);
@@ -26,12 +27,17 @@ $hacky-offset: 32px;
   }
 
   .cover-photo {
-    height: 322px;
+    height: 370px;
     background-color: grey;
     background-image: url("../../assets/images/cover.jpg");
     background-size: cover;
     background-position: -2% center;
     background-repeat: no-repeat;
+
+    @media (max-width: $lte-largePhone) {
+      height: 320px;
+    }
+
   }
 
   .title-wrapper {
@@ -67,12 +73,6 @@ $hacky-offset: 32px;
     }
 
     .tagline-side {
-
-      //border: 1px solid red;
-
-      & > * {
-        //border: 1px solid red;
-      }
 
       @media (max-width: $lt-tablet) {
         width: 184px;
@@ -181,7 +181,7 @@ $hacky-offset: 32px;
         .separator {
           transform: rotate(36deg);
 
-          @media (max-width: $largePhone) {
+          @media (max-width: $lte-tablet) {
             transform: rotate(30deg);
             margin-right: 20px;
           }
@@ -191,7 +191,7 @@ $hacky-offset: 32px;
         .current-section-mobile {
           display: none;
 
-          @media (max-width: $largePhone) {
+          @media (max-width: $lte-tablet) {
             display: inline;
           }
 
@@ -216,7 +216,7 @@ $hacky-offset: 32px;
         .current-section{
           color: white;
 
-          @media (max-width: $largePhone) {
+          @media (max-width: $lte-tablet) {
             display: none;
           }
 
@@ -228,7 +228,7 @@ $hacky-offset: 32px;
         display: flex;
         align-items: center;
 
-        @media (max-width: $largePhone) {
+        @media (max-width: $lte-tablet) {
           display: none;
         }
 
@@ -316,5 +316,3 @@ $hacky-offset: 32px;
   }
 
 }
-
-@import "header_small";

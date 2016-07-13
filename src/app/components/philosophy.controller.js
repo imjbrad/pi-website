@@ -3,8 +3,8 @@ export function PhilosophyCtrl($scope){
 
   $scope.stats = [
     {
-      title: '73% of students probably say something',
-      details: "72%"
+      title: "72% perfect of college students",
+      details: "72% percent of college students act and then say something that is about this long"
     },
     {
       title: '33% of students probably say something',
@@ -16,12 +16,13 @@ export function PhilosophyCtrl($scope){
     }
   ];
 
-  $scope.selectStat = function($event, i) {
-    $scope.currentStat = $scope.stats[i];
+  $scope.selectStat = function(i) {
+    $scope.currentStatIndex = i;
+    $scope.currentStat = $scope.stats[$scope.currentStatIndex];
+
     console.log($scope.currentStat);
-    $event.stopPropagation();
   };
 
-  $scope.currentStat = $scope.stats[0];
+  $scope.selectStat(0);
 
 }

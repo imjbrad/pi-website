@@ -8,13 +8,13 @@
 
     display: flex;
 
-    @media (max-width: $largePhone) {
+    @media (max-width: $lte-largePhone) {
       flex-direction: column;
     }
 
     .get-pi, .form-wrapper {
       padding: 60px;
-      @media (max-width: $largePhone) {
+      @media (max-width: $lte-largePhone) {
         padding: 30px;
       }
     }
@@ -23,7 +23,7 @@
       width: 40%;
       background-color: $peach;
 
-      @media (max-width: $largePhone) {
+      @media (max-width: $lte-largePhone) {
         width: 100%;
       }
 
@@ -40,7 +40,7 @@
       width: 60%;
       background-color: $beige;
 
-      @media (max-width: $largePhone) {
+      @media (max-width: $lte-largePhone) {
         width: 100%;
       }
 
@@ -50,7 +50,7 @@
         max-width: 560px;
         margin: auto;
 
-        @media (max-width: $largePhone) {
+        @media (max-width: $lte-largePhone) {
           width: 100%;
         }
 
