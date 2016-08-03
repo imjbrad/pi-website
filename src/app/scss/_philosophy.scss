@@ -173,6 +173,11 @@ $statistic-height: 258px;
             height: auto;
           }
 
+          .statistic-description {
+            padding-bottom: $vertical-spacing/2;
+            border-bottom: 5px solid $red;
+          }
+
 
         }
 

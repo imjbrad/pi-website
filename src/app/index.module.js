@@ -11,6 +11,7 @@ import { PhilosophyCtrl } from './components/philosophy.controller';
 import { SquareDirective } from './components/square.directive';
 
 angular.module('websiteV2', ['ui.router'])
+
   .config(config)
   .config(routerConfig)
 

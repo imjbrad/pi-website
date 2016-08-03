@@ -89,6 +89,10 @@ body {
     }
 }
 
+.red {
+  color: $red;
+}
+
 .hide-on-mobile {
 
   @media (max-width: $lte-smallDesktop - 1) {

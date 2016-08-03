@@ -72,6 +72,7 @@
             outline: none;
             flex-grow: 1;
             padding: 0;
+            font-family: apercu_bold;
           }
 
         }
@@ -81,24 +82,61 @@
           margin-bottom: 25px;
 
           .interest {
-            display: inline-flex;
-            font-size: 12px;
-            align-items: center;
+            display: inline-block;
 
             &:not(:last-of-type){
               margin-right: 20px;
               margin-bottom: 15px;
             }
 
-            .circle {
-              width: 20px;
-              height: 20px;
-              border-radius: 50%;
-              border: 1px solid black;
-              margin-right: 8px;
+            input[type="checkbox"] {
+              width: 0;
+              height: 0;
+              display: none;
+            }
+
+            label {
+              display: flex;
+              font-size: 12px;
+              align-items: center;
+
+              .circle {
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                border: 1px solid black;
+                margin-right: 8px;
+                position: relative;
+
+                &:after {
+                  content: "";
+                  display: block;
+                  position: absolute;
+                  width: 50%;
+                  height: 50%;
+                  background: black;
+                  border-radius: 100%;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  transition: opacity .1s;
+                  opacity: 0;
+                }
+
+              }
+
+            }
+
+            input[type="checkbox"]:checked + label {
+
+              .circle:after {
+                opacity: 1;
+              }
+
             }
 
           }
+
         }
 
         .submit-button {
