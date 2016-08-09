@@ -183,7 +183,9 @@
       <div class="pi-content-container">
         <div class="founder">
           <div class="jordan-image">
-            <img src=""/>
+            <div class="image-wrapper">
+              <div class="image"></div>
+            </div>
           </div>
           <div class="jordan-bio pi-paragraph-wrapper">
             <h2>Jordan Bradley, Founder</h2>
@@ -196,17 +198,19 @@
           </div>
         </div>
         <div class="advisers">
-          <h3 class="advisers-title">Advisors</h3>
+          <h3 class="advisers-title">Industry Leading Mentors</h3>
           <div class="advisers-list">
             <div class="adviser">
-              <div class="adviser-image"></div>
+              <div class="adviser-image-wrapper">
+                <div class="image"></div>
+              </div>
               <div class="adviser-bio pi-paragraph-wrapper">
                 <h4>Keith Lea, Offline</h4>
                 <p>As students are pressured by an overwhelming number of responsibilities, college campuses are.</p>
               </div>
             </div>
             <div class="adviser">
-              <div class="adviser-image"></div>
+              <div class="adviser-image-wrapper"></div>
               <div class="adviser-bio pi-paragraph-wrapper">
                 <h4>Randell Bradley, Neumours</h4>
                 <p>As students are pressured by an overwhelming number of responsibilities, college campuses are.</p>
@@ -239,23 +243,23 @@
         </div>
       </div>
       <div class="form-wrapper">
-        <form name="form1" enctype="multipart/form-data" method="post" ng-controller="FormController" novalidate action="https://pidaily.wufoo.com/forms/z1bamxff0caiz5o/#public" ng-submit="submitContactForm($event)">
-          <div class="field-group name"><label for="name">Name:</label><input id="name" ng-model="nameModel" required type="text" name="Field1" /></div>
-          <div class="field-group title"><label for="title">Title:</label><input id="title" ng-model="titleModel" required type="text" name="Field107" /></div>
-          <div class="field-group email"><label for="email" >Email:</label><input id="email" ng-model="emailModel" required type="email" name="Field106" /></div>
+        <form name="form1" id="contactForm" enctype="multipart/form-data" method="post" target="form_frame" ng-controller="FormController" novalidate action="https://pidaily.wufoo.com/forms/z1bamxff0caiz5o/#public"">
+          <div class="field-group name"><label for="name">Name:</label><input id="name" ng-model="contactFormModel.nameModel" required type="text" name="Field1" /></div>
+          <div class="field-group title"><label for="title">Title:</label><input id="title" ng-model="contactFormModel.titleModel" required type="text" name="Field107" /></div>
+          <div class="field-group email"><label for="email" >Email:</label><input id="email" ng-model="contactFormModel.emailModel" required type="email" name="Field106" /></div>
           <div class="interests">
             <div class="how">How would you like to be connected with us?</div>
             <div class="interest">
-              <input id="consultation_check" type="checkbox" name="Field6" value="grow"/>
+              <input id="consultation_check" type="checkbox" ng-model="contactFormModel.grow" name="Field6" value="grow"/>
               <label for="consultation_check"><div class="circle"></div>Help Us Grow</label>
             </div>
             <div class="interest">
-              <input id="pilot_check" type="checkbox" name="Field7" value="beta"/>
+              <input id="pilot_check" type="checkbox" ng-model="contactFormModel.beta" name="Field7" value="beta"/>
               <label for="pilot_check"><div class="circle"></div>Join the Pilot Program</label>
             </div>
             <!--<br>-->
             <div class="interest">
-              <input id="video_check" type="checkbox" name="Field8" value="general"/>
+              <input id="video_check" type="checkbox" ng-model="contactFormModel.general" name="Field8" value="general"/>
               <label for="video_check"><div class="circle"></div>Get More Information</label>
             </div>
           </div>
@@ -266,8 +270,11 @@
             <input type="hidden" id="idstamp" name="idstamp" value="pupuznyTT0TASunyUcxGEp/h75M2giPbrMgiFENEpu0="/>
           </div>
 
-          <input class="submit-button" type="submit" value="Submit"/>
+          <input class="submit-button" type="submit" value="Submit" ng-click="submitContactForm($event)" />
         </form>
+
+        <iframe name="form_frame" style="display:none;"></iframe>
+
       </div>
     </div>
   </section>
