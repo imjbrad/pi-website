@@ -33,8 +33,8 @@
             <div class="video"></div>
           </div>
           <div class="tagline">
-              We make health conscious<br>
-              productivity apps for students and teachers.
+              We help students balance<br>
+              work, life, and wellness.
           </div>
         </div>
       </div>
@@ -43,7 +43,7 @@
       <nav class="full">
         <a ui-sref="philosophy"><h4>Philosophy</h4></a>
         <div class="separator"></div>
-        <a ui-sref="product"><h4>Product</h4></a>
+        <a ui-sref="product"><h4>Our App</h4></a>
         <div class="separator"></div>
         <a ui-sref="company"><h4>Company</h4></a>
         <div class="separator"></div>
@@ -75,8 +75,8 @@
   <section class="about">
     <div class="pi-content-wrapper">
       <div class="pi-content-container short-description">
-        Students too often choose between good health and good grades; and we don't think that's right.<br class="hide-on-mobile">
-        Our day planning software helps students balance their asignments and todos without sacrificing<br class="hide-on-mobile">
+        <strong>Students too often choose between good health and good grades</strong>.<br class="hide-on-mobile">
+        Our day planning app helps students balance their assignments and todos without sacrificing<br class="hide-on-mobile">
         sleep, while giving teachers what they need to set manageable expectations for the classroom.
       </div>
     </div>
@@ -97,7 +97,7 @@
           </div>
           <div class="van photo">
             <div class="pi-overlay">
-              <!--<h3 class="label">Meet Our Team</h3>-->
+              <h1 class="label">Our Philosophy:</h1>
             </div>
           </div>
         </div>
@@ -107,14 +107,15 @@
             <div class="overview-paragraph-wrapper">
               <div class="philosophy-overview pi-paragraph-wrapper">
                 <h1 class="red">We believe that wellness and<Br>
-                  productivity are insepraeble.
+                  productivity are inseparable.
                 </h1>
                 <p>
-                  As students are pressured by an overwhelming number of<br>
-                  responsibilities, college campuses are witness to a steady<br>
-                  decrease in the quality of student mental health. We think<br>
-                  current productivity tools could do more to aid in balancing
-                  workload and determining expectations.
+                  Students and young professionals especially have trouble
+                  balancing school-work, life, and wellness. As a result,
+                  college campus are witness to a steady decrease in the quality
+                  of student mental health. We believe our holistic approach to
+                  productivity can change the culture of work to be more considerate
+                  of wellness for students and young professionals.
                 </p>
               </div>
             </div>
@@ -122,14 +123,14 @@
             <div class="statistics-wrapper">
               <div class="statistic">
                 <div class="statistic-description pi-paragraph-wrapper">
-                  <h2 class="red">{{ currentStat.title }}</h2>
+                  <h3 class="">{{ currentStat.title }}</h3>
                   <p>{{ currentStat.details }}</p>
                 </div>
               </div>
               <div class="icons">
-                <button class="icon smile" ng-class="{'active-stat' : currentStatIndex == 0}" make-square ng-click="selectStat(0)"></button>
-                <button class="icon heart" ng-class="{'active-stat' : currentStatIndex == 2}" make-square ng-click="selectStat(2)"></button>
-                <button class="icon check" ng-class="{'active-stat' : currentStatIndex == 1}" make-square ng-click="selectStat(1)"></button>
+                <button class="icon heart" ng-class="{'active-stat' : currentStatIndex == 0}" make-square ng-click="selectStat(0)"></button>
+                <button class="icon smile" ng-class="{'active-stat' : currentStatIndex == 1}" make-square ng-click="selectStat(1)"></button>
+                <button class="icon check" ng-class="{'active-stat' : currentStatIndex == 2}" make-square ng-click="selectStat(2)"></button>
               </div>
             </div>
           </div>
@@ -140,20 +141,30 @@
   <section class="product" scroll-sref="product">
     <div class="explore-pi-daily pi-section-header">
       <div class="pi-section-header-text pi-paragraph-wrapper">
-        <h1>Explore PiDaily</h1>
+        <h1>Our Day Planning App</h1>
         <p>
-          Click the red dots to learn more about PiDaily,<Br>
-          our health conscious day planner for students.
+          Pi is a day planner that connects with learning management<br>
+          systems like Moodle and Blackboard to help students<br>
+          balance school, life, and wellness.
         </p>
       </div>
     </div>
     <div class="demo">
+
       <div class="slides-wrapper">
         <img class="slide" src="assets/images/product/product-slide-01.jpg">
         <img class="slide" src="assets/images/product/product-slide-05.jpg">
         <img class="slide" src="assets/images/product/product-slide-03.jpg">
         <img class="slide" src="assets/images/product/product-slide-04.jpg">
       </div>
+
+      <div class="mobile-slides-wrapper">
+        <img class="mobile slide" src="assets/images/product/mobile-product-slide-01.jpg">
+        <img class="mobile slide" src="assets/images/product/mobile-product-slide-05.jpg">
+        <img class="mobile slide" src="assets/images/product/mobile-product-slide-03.jpg">
+        <img class="mobile slide" src="assets/images/product/mobile-product-slide-04.jpg">
+      </div>
+
     </div>
     <div class="section-footer"></div>
   </section>
@@ -163,7 +174,7 @@
         <div class="pi-section-header-text text-centered pi-paragraph-wrapper">
           <h1>About the Company</h1>
           <p>
-            Click the red dots to learn more about PiDaily,<Br>
+            PiDaily is a day planner that helps,<Br>
             our health conscious day planner for students.
           </p>
         </div>
@@ -210,7 +221,7 @@
   <section class="contact" scroll-sref="contact">
     <div class="pi-section-header">
       <div class="pi-section-header-text text-centered pi-paragraph-wrapper">
-        <h1>Contact Us</h1>
+        <h1>Get Pi For Your Students</h1>
         <p>
           Click the red dots to learn more about PiDaily,<Br>
           our health conscious day planner for students.
@@ -228,26 +239,34 @@
         </div>
       </div>
       <div class="form-wrapper">
-        <form>
-          <div class="field-group name"><label for="name">Name:</label><input id="name" type="text" /></div>
-          <div class="field-group title"><label for="title">Title:</label><input id="title" type="text" /></div>
-          <div class="field-group email"><label for="email" >Email:</label><input id="email" type="email" /></div>
+        <form name="form1" enctype="multipart/form-data" method="post" ng-controller="FormController" novalidate action="https://pidaily.wufoo.com/forms/z1bamxff0caiz5o/#public" ng-submit="submitContactForm($event)">
+          <div class="field-group name"><label for="name">Name:</label><input id="name" ng-model="nameModel" required type="text" name="Field1" /></div>
+          <div class="field-group title"><label for="title">Title:</label><input id="title" ng-model="titleModel" required type="text" name="Field107" /></div>
+          <div class="field-group email"><label for="email" >Email:</label><input id="email" ng-model="emailModel" required type="email" name="Field106" /></div>
           <div class="interests">
+            <div class="how">How would you like to be connected with us?</div>
             <div class="interest">
-              <input id="consultation_check" type="checkbox" name="interests" option="consultation"/>
-              <label for="consultation_check"><div class="circle"></div>Consultation</label>
+              <input id="consultation_check" type="checkbox" name="Field6" value="grow"/>
+              <label for="consultation_check"><div class="circle"></div>Help Us Grow</label>
             </div>
             <div class="interest">
-              <input id="pilot_check" type="checkbox" name="interests" option="pilot"/>
-              <label for="pilot_check"><div class="circle"></div>Pilot Program</label>
+              <input id="pilot_check" type="checkbox" name="Field7" value="beta"/>
+              <label for="pilot_check"><div class="circle"></div>Join the Pilot Program</label>
             </div>
-            <br>
+            <!--<br>-->
             <div class="interest">
-              <input id="video_check" type="checkbox" name="interests" option="video"/>
-              <label for="video_check"><div class="circle"></div>Video Demo</label>
+              <input id="video_check" type="checkbox" name="Field8" value="general"/>
+              <label for="video_check"><div class="circle"></div>Get More Information</label>
             </div>
           </div>
-          <button class="submit-button" type="submit">Send</button>
+
+          <div style="display: none;">
+            <label for="comment">Do Not Fill This Out</label>
+            <textarea name="comment" id="comment" rows="1" cols="1"></textarea>
+            <input type="hidden" id="idstamp" name="idstamp" value="pupuznyTT0TASunyUcxGEp/h75M2giPbrMgiFENEpu0="/>
+          </div>
+
+          <input class="submit-button" type="submit" value="Submit"/>
         </form>
       </div>
     </div>

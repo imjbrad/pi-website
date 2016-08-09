@@ -6,6 +6,7 @@ import { runBlock } from './index.run';
 
 import { RootScrollDirective } from './components/root_scroll_directive';
 import { MenuController } from './components/menu.controller';
+import { FormController } from './components/form.controller';
 import { ScrollSrefDirective } from './components/scroll_sref.directive';
 import { PhilosophyCtrl } from './components/philosophy.controller';
 import { SquareDirective } from './components/square.directive';
@@ -19,4 +20,5 @@ angular.module('websiteV2', ['ui.router'])
   .directive("scrollSref", ScrollSrefDirective)
   .directive("makeSquare", SquareDirective)
   .controller("MenuController", MenuController)
+  .controller("FormController", FormController)
   .controller("PhilosophyCtrl", PhilosophyCtrl);

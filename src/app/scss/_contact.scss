@@ -49,6 +49,7 @@
         width: 80%;
         max-width: 560px;
         margin: auto;
+        font-size: .8em;
 
         @media (max-width: $lte-largePhone) {
           width: 100%;
@@ -62,7 +63,6 @@
           margin-bottom: 15px;
 
           label {
-            font-size: 10px;
             margin-right: 5px;
           }
 
@@ -78,15 +78,22 @@
         }
 
         .interests {
-          margin-top: 25px;
           margin-bottom: 25px;
+
+          .how {
+            margin-bottom: 15px;
+            padding: 5px;
+            border: 1px solid black;
+            text-align: center;
+            user-select: none;
+          }
 
           .interest {
             display: inline-block;
 
             &:not(:last-of-type){
               margin-right: 20px;
-              margin-bottom: 15px;
+              margin-bottom: 10px;
             }
 
             input[type="checkbox"] {
@@ -97,8 +104,10 @@
 
             label {
               display: flex;
-              font-size: 12px;
               align-items: center;
+              font-size: .95em;
+              cursor: pointer;
+
 
               .circle {
                 width: 20px;
@@ -140,11 +149,18 @@
         }
 
         .submit-button {
-          border: 1px solid black;
+          border: 2px dotted black;
           padding: 10px;
           width: 100%;
           background: none;
           outline: none;
+          font-family: "apercu_bold", sans-serif;
+          cursor: pointer;
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.68);
+          }
+
         }
 
       }

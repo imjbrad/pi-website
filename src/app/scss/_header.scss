@@ -154,6 +154,18 @@ $hacky-offset: 32px;
 
       a {
         cursor: pointer;
+        padding-bottom: 4px;
+        margin-top: 4px;
+        border-bottom: 2px solid transparent;
+
+        h4 {
+          margin: 0;
+        }
+
+        &:hover {
+          border-bottom: 2px solid white;
+        }
+
       }
 
     }

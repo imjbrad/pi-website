@@ -33,14 +33,14 @@
     background-color: #4d4d4d;
     padding: 60px 0px;
 
+
     .slides-wrapper::-webkit-scrollbar { display: none }
-    .slides-wrapper {
+    .slides-wrapper, .mobile-slides-wrapper {
 
       overflow-x: scroll;
-      overflow-y: auto;
-      //border: 1px solid red;
+      -webkit-overflow-scrolling: touch;
+      overflow-y: visible;
       white-space: nowrap;
-      line-height: 0;
 
       .slide {
         display: inline-block;
@@ -54,6 +54,41 @@
         &:last-child {
           margin-right: 60px;
         }
+
+      }
+
+    }
+
+    .slides-wrapper {
+
+      @media (max-width: $lte-largePhone) {
+        display: none;
+      }
+
+    }
+
+    .mobile-slides-wrapper {
+
+      @media (min-width: $gte-largePhone) {
+        display: none;
+      }
+
+      .slide {
+
+        max-width: 95vw;
+        max-height: 80vh;
+
+        width: auto;
+        height: auto;
+
+        &:first-child {
+          margin-left: 30px;
+        }
+
+        &:last-child {
+          margin-right: 30px;
+        }
+
       }
 
     }
