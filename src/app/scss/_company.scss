@@ -34,7 +34,7 @@
             .image {
               width: 100%;
               height: 200px;
-              background-image: url("/assets/images/pitch-still.jpg");
+              background-image: url("../assets/images/pitch-still.jpg");
               background-size: cover;
               background-position: left;
               background-repeat: no-repeat;
@@ -73,12 +73,12 @@
             background-repeat: no-repeat;
 
             &.devaris {
-              background-image: url("/assets/images/devaris-headshot.jpg");
+              background-image: url("../assets/images/devaris-headshot.jpg");
             }
 
             &.trenton {
               background-position: top left;
-              background-image: url("/assets/images/trenton-headshot.jpg");
+              background-image: url("../assets/images/trenton-headshot.jpg");
             }
 
           }

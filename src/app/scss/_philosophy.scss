@@ -56,7 +56,7 @@ $statistic-height: 258px;
 
       .run {
         width: 45%;
-        background-image: url("../../assets/images/running.jpeg");
+        background-image: url("../assets/images/running.jpeg");
         background-size: 197%;
         background-position: center 35%;
 
@@ -71,7 +71,7 @@ $statistic-height: 258px;
 
       .work {
         background-position-y: 20%;
-        background-image: url("../../assets/images/working.jpeg");
+        background-image: url("../assets/images/working.jpeg");
         width: 55%;
         @media (max-width: $lte-largePhone) {
           width: 50%;
@@ -84,7 +84,7 @@ $statistic-height: 258px;
         left: 10%;
         width: 50%;
         box-sizing: content-box;
-        background-image: url("https://hd.unsplash.com/photo-1462841764092-352b1d22ced3");
+        background-image: url("../assets/woman.jpeg");
 
         @media (max-width: $lt-tablet) {
           left: 7.5%;
