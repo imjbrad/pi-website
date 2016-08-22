@@ -8,7 +8,7 @@ export function SquareDirective() {
         $el.height($el.width());
       }
 
-      $(document).on('ready', makeSquare);
+      $(document).ready(makeSquare);
       $(window).on('resize', makeSquare);
 
     }
