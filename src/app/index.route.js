@@ -7,21 +7,10 @@ export function routerConfig($stateProvider, $urlRouterProvider) {
       url: '/'
     })
 
-    //.state('about', {
-    //  //url: '/about',
-    //  data: {
-    //    sectionSelector: ".about",
-    //    sectionDisplayName: "About"
-    //  },
-    //  params: {
-    //    scroll: null
-    //  }
-    //})
-
     .state('philosophy', {
       //url: '/philosophy',
       data: {
-        sectionSelector: ".philosophy",
+        sectionSelector: ".van.photo",
         sectionDisplayName: "Philosophy"
       },
       params: {
@@ -33,7 +22,7 @@ export function routerConfig($stateProvider, $urlRouterProvider) {
       //url: '/product',
       data: {
         sectionSelector: ".product",
-        sectionDisplayName: "Product"
+        sectionDisplayName: "Our App"
       },
       params: {
         scroll: null

@@ -1,3 +1,5 @@
+import { sendGAPageView } from "./misc_helpers.js";
+
 function elCenterInView(el){
   var element = $(el),
     $window = $(window),
@@ -6,7 +8,6 @@ function elCenterInView(el){
     viewportBottom = viewportTop + $window.height();
   return (elVerticalCenter > viewportTop) && (elVerticalCenter < viewportBottom);
 }
-
 
 /**
  * This directive sets a given state name
@@ -46,8 +47,9 @@ export function ScrollSrefDirective($timeout, $state) {
             if (elCenterInView($scope.sectionEl)) {
               $state.go($scope.stateName, {scroll: false});
               console.log(((direction == 'up' ? 'Up' : 'Down')) + " Scroll State Change for " + $scope.stateName);
+              sendGAPageView($scope.stateName);
             }
-          }, 250);
+          }, 500);
         };
 
         $scope.downWaypoint = new Waypoint({

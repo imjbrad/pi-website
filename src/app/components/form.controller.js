@@ -1,3 +1,5 @@
+import {sendGAPageView} from "./misc_helpers.js";
+
 export function FormController($scope){
   'ngInject';
 
@@ -18,6 +20,8 @@ export function FormController($scope){
     $("#contactForm").submit();
     alert("Thanks for reaching out. Jordan will follow up with you shortly.");
     $scope.contactFormModel = null;
+
+    sendGAPageView("user-submitted-contact-form");
 
   }
 

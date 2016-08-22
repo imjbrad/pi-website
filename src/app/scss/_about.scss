@@ -11,6 +11,12 @@
 
   }
 
+  .highlight {
+    background-color: white;
+    padding: 10px 30px;
+    display: inline-block;
+  }
+
   .short-description {
     text-align: center;
     line-height: 1.6em;
@@ -25,5 +31,3 @@
   }
 
 }
-
-@import "about_medium";
