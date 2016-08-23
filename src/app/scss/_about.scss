@@ -13,8 +13,6 @@
 
   .highlight {
     background-color: white;
-    //padding: 10px 30px;
-    //display: inline-block;
     font-family: apercu_bold, sans-serif;
   }
 
@@ -22,11 +20,13 @@
     text-align: center;
     line-height: 1.6em;
     font-size: 1rem;
+    width: 500px;
 
     @media (max-width: $lte-largePhone) {
       line-height: 1.6em;
       font-size: .9rem;
       text-align: center;
+      width: 85%;
     }
 
   }

@@ -33,6 +33,10 @@
     background-color: #4d4d4d;
     padding: 60px 0px;
 
+    @media (max-width: $lte-largePhone) {
+      padding: $vertical-spacing/2 0px;
+    }
+
 
     .slides-wrapper::-webkit-scrollbar { display: none }
     .slides-wrapper, .mobile-slides-wrapper {
@@ -75,18 +79,19 @@
 
       .slide {
 
-        max-width: 95vw;
-
-        width: auto;
+        width: 92vw;
         height: auto;
+        margin-right: 2vw;
 
         &:first-child {
-          margin-left: 2.5vw;
+          margin-left: 2vw;
         }
 
         &:last-child {
-          margin-right: 2.5vw;
+          margin-right: 2vw;
         }
+
+
 
       }
 
