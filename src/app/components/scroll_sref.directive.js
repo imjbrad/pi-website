@@ -43,13 +43,15 @@ export function ScrollSrefDirective($timeout, $state) {
 
         $scope.scrollHandler = function (direction) {
           $timeout.cancel($scope.tm);
+
+          $state.go($scope.stateName, {scroll: false});
           $scope.tm = $timeout(function () {
             if (elCenterInView($scope.sectionEl)) {
-              $state.go($scope.stateName, {scroll: false});
               console.log(((direction == 'up' ? 'Up' : 'Down')) + " Scroll State Change for " + $scope.stateName);
               sendGAPageView($scope.stateName);
             }
-          }, 500);
+          }, 250);
+
         };
 
         $scope.downWaypoint = new Waypoint({

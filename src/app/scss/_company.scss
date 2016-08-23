@@ -22,14 +22,15 @@
       .founder {
 
         width: 35%;
+
         @media (max-width: $lte-largePhone) {
           width: 100%;
+          margin-bottom: $vertical-spacing/4;
         }
 
         .jordan-image {
 
-          padding-bottom: 15px;
-          margin-bottom: 15px;
+          margin-bottom: $vertical-spacing/2;
 
             .image {
               width: 100%;
@@ -71,6 +72,10 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+
+            @media (max-width: $lte-largePhone) {
+              margin-bottom: $vertical-spacing/4;
+            }
 
             &.devaris {
               background-image: url("../assets/images/devaris-headshot.jpg");

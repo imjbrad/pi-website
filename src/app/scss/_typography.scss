@@ -6,7 +6,7 @@ html {
   font-size: 12px;
 
   @media (min-width: $lte-mediumPhone) {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   @media (min-width: $lte-smallDesktop) {
@@ -21,14 +21,14 @@ html {
 
 }
 
-h1 { font-size: 1.6rem; line-height: 1em;}
+h1 { font-size: 1.6rem; }
 h2 { font-size: 1.5rem; }
 h3 { font-size: 1.25rem; }
 h4 { font-size: 1rem; }
 
 h1, h2, h3, h4 {
   font-weight: normal;
-  line-height: 1em;
+  line-height: 1.1em;
 }
 
 h1, h2, h3 {
@@ -48,12 +48,13 @@ body {
 
   h1, h2, h3, h4 {
     margin-top: 0;
-    margin-bottom: .7em;
+    margin-bottom: .5em;
 
     & + p {
       margin-bottom: 0;
+      margin-top: 0;
       font-size: .85rem;
-      line-height: 1.7em;
+      line-height: 1.6em;
     }
 
   }

@@ -76,17 +76,16 @@
       .slide {
 
         max-width: 95vw;
-        max-height: 80vh;
 
         width: auto;
         height: auto;
 
         &:first-child {
-          margin-left: 30px;
+          margin-left: 2.5vw;
         }
 
         &:last-child {
-          margin-right: 30px;
+          margin-right: 2.5vw;
         }
 
       }

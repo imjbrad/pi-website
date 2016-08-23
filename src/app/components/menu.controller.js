@@ -12,6 +12,7 @@ export function MenuController($scope, $rootScope, $state){
   });
 
   $scope.stateNameSelected = function(){
+
     $state.go($scope.selected_state.name);
     $('select').trigger('blur');
   };

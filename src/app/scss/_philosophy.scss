@@ -197,6 +197,7 @@ $statistic-height: 258px;
             margin-bottom: $vertical-spacing/2;
           }
 
+
           .icon {
             width: 26%;
             max-width: 110px;
@@ -205,6 +206,7 @@ $statistic-height: 258px;
             border-radius: 100%;
             margin-right: 3%;
             cursor: pointer;
+            display: block;
             position: relative;
             //box-shadow: 0px 0px 19px 0px rgba(185, 185, 185, 0.50);
 

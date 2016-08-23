@@ -5,14 +5,16 @@ export function SquareDirective() {
     link: function($scope, $el, $attr) {
 
       function makeSquare() {
-        $el.height($el.width());
-
+        var computedWidth = $el.css("width");
+        $el.css("height", computedWidth);
       }
-        $(window).on('resize', makeSquare);
-        makeSquare();
+
+      $(document).ready(makeSquare);
+      $(window).on('resize', makeSquare);
 
       }
 
     }
+
 }
 
