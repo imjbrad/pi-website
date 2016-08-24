@@ -178,6 +178,13 @@ $statistic-height: 258px;
           .statistic-description {
             padding-bottom: $vertical-spacing/2;
             border-bottom: 5px solid $red;
+
+            .cite {
+              font-style: oblique;
+              vertical-align: super;
+              font-size: .6em;
+              font-family: Georgia, sans-serif;
+            }
           }
 
 

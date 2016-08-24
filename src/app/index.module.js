@@ -11,7 +11,7 @@ import { ScrollSrefDirective } from './components/scroll_sref.directive';
 import { PhilosophyCtrl } from './components/philosophy.controller';
 import { SquareDirective } from './components/square.directive';
 
-angular.module('websiteV2', ['ui.router'])
+angular.module('websiteV2', ['ui.router', 'ngSanitize'])
 
   .config(config)
   .config(routerConfig)

@@ -124,6 +124,15 @@ body {
 
 }
 
+footer {
+  //background-color: white;
+  padding: 20px;
+  font-size: .5em;
+  color: lighten($dark, 50%);
+  line-height: 1.2em;
+  text-align: center;
+}
+
 @import "scss/typography";
 @import "scss/header";
 @import "scss/about";
